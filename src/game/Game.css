@@ -1,0 +1,150 @@
+#root {
+	-fx-background-color: b1c9d3;
+}
+
+#chatScrollPane {
+	-fx-padding: 10; 
+	-fx-focus-color:transparent;
+	-fx-faint-focus-color:transparent;
+	-fx-background-color: bfd5df;
+	-fx-border-radius: 10;
+	-fx-border-width: 10;
+  	-fx-background-radius: 10;
+}
+
+#messageArea {
+	-fx-padding: 0; 
+	-fx-background-color:bfd5df; 
+	-fx-control-inner-background:bfd5df; 
+	-fx-effect:null;
+	-fx-border-radius: 10;
+	-fx-background-radius: 0;
+	-fx-effect: innershadow( gaussian, bfd5df, 4, 1, 0, 0 );
+}
+
+#writingField { 
+	-fx-focus-color:transparent;
+	-fx-faint-focus-color:transparent;
+	-fx-effect:null;
+	-fx-border-width: 0;
+	-fx-background-insets: 1; 
+	-fx-border-radius: 0;
+  -fx-background-radius: 10;
+}
+
+.clickable:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 5, 0, 0, 0);
+    -fx-cursor: hand;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+.clickable:pressed {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 5, 0, 0, 0);
+    -fx-cursor: hand;
+    -fx-scale-x: 1.3;
+    -fx-scale-y: 1.3;
+}
+
+.robber:hover {
+	-fx-cursor: hand;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.robber:pressed {
+	-fx-cursor: hand;
+    -fx-scale-x: 1.3;
+    -fx-scale-y: 1.3;
+}
+
+.lumber {
+	-fx-image: url(/game/resources/pictures/lumbercard.png);
+}
+
+.brick {
+	-fx-image: url(/game/resources/pictures/brickcard.png);
+}
+
+.wool {
+	-fx-image: url(/game/resources/pictures/woolcard.png);
+}
+
+.ore {
+	-fx-image: url(/game/resources/pictures/orecard.png);
+}
+
+.grain {
+	-fx-image: url(/game/resources/pictures/graincard.png);
+}
+
+.menuPane, #playerInfo {
+	-fx-background-color:bfd5df; 
+	-fx-background-radius: 10;
+	-fx-padding: 7.0;
+}
+
+#playerInfo {
+	-fx-padding: 0;
+}
+
+.menuPaneDisabled {
+	-fx-background-color: lightgrey;
+	-fx-background-radius: 10;
+	-fx-padding: 7.0;
+}
+
+.button {
+	-fx-background-color:eeeeee; 
+	-fx-background-radius: 5;
+}
+
+.button:hover {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 5, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 5, 0, 0, 0);
+    -fx-cursor: hand;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+.noBackground {
+	-fx-background-color: transparent;
+} 
+
+.separator *.line { 
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+}
+
+.cornerAndEdge {
+	-fx-fill: rgba(255,255,255,0.3);
+	-fx-stroke: rgba(255,255,255,1);
+}
+
+#notificationLabel {
+	-fx-font-family:sans-serif;
+	-fx-text-fill: darkred;
+	-fx-font-size: 40;
+}
+
+.infoLabel {
+    -fx-font-size: 11;
+}
+
+.settings {
+	-fx-padding: 40;
+}
+
+.settingsButton {
+	-fx-background-color:eeeeee; 
+	-fx-background-radius: 5;
+	-fx-border-color:grey;
+	-fx-border-radius: 5;
+}
+
+.dropshadow {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 10, 0, 0, 0);	
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox
+	xmlns:fx="http://javafx.com/fxml"
+	fx:controller="lobby.buttons.ButtonsController"
+	stylesheets="@/lobby/buttons/buttons.css"
+	styleClass="box">
+	<Button
+		fx:id="returnToMainMenuButton"
+		styleClass="button"
+		onAction="#returnToMainMenu"
+		text="Back">
+	</Button>
+	<Button
+		fx:id="readyButton"
+		styleClass="button"
+		onAction="#ready"
+		text="Ready"
+		disable="true">
+	</Button>
+</HBox>

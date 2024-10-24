@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.Rectangle?>
+
+<Rectangle xmlns:fx="http://javafx.com/fxml"
+	fx:controller="game.board.edges.EdgeController"
+	styleClass="clickable, cornerAndEdge"
+	fx:id="edgeView"
+	onMouseClicked="#select"
+	pickOnBounds="true"
+	width="6"
+	arcWidth="5"
+	arcHeight="5"/>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.Rectangle?>
+
+<Rectangle xmlns:fx="http://javafx.com/fxml"
+	fx:controller="game.board.construction.roads.RoadController"
+	fx:id="roadView"
+	width="7"
+	arcWidth="7"
+	arcHeight="7"/>

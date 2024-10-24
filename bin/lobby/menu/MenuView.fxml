@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Region?>
+
+<VBox
+	xmlns:fx="http://javafx.com/fxml"
+	fx:controller="lobby.menu.MenuController"
+	stylesheets="lobby/menu/menu.css"
+	styleClass="menu">
+	<VBox
+		alignment="center"
+		id="logoBox">
+		<ImageView
+			fitWidth="100"
+			pickOnBounds="true"
+			preserveRatio="true">
+			<image>
+				<Image url="/main/yakLogo.png" />
+			</image>
+		</ImageView>
+	</VBox>
+	<StackPane fx:id="serverPane">
+		<VBox fx:id="serverNotActiveBox">
+			<Label
+				styleClass="heading"
+				text="Start Server"
+				fx:id="startServerLabel">
+			</Label>
+			<TextField
+				fx:id="serverPortField"
+				promptText="port"
+				onAction="#startServer"
+				styleClass="textField">
+			</TextField>
+			<Region styleClass="spaceBetweenTextFieldsAndButton" />
+			<Button
+				fx:id="launchButton"
+				text="Start"
+				onAction="#startServer"
+				styleClass="button">
+			</Button>
+		</VBox>
+		<VBox
+			fx:id="serverActiveBox"
+			visible="false">
+			<Label
+				styleClass="heading"
+				text="Active Server"
+				fx:id="activeServerLabel">
+			</Label>
+			<TextField
+				fx:id="activeServerAddressLabel"
+				styleClass="addressField">
+			</TextField>
+			<Region styleClass="spaceBetweenTextFieldsAndButton" />
+			<Button
+				fx:id="terminateServerButton"
+				text="Terminate"
+				onAction="#stopServer">
+			</Button>
+		</VBox>
+	</StackPane>
+	<Separator />
+	<StackPane fx:id="clientPane">
+		<VBox fx:id="clientNotConnectedBox">
+			<Label
+				fx:id="connectToServerLabel"
+				styleClass="heading"
+				text="Connect to server">
+			</Label>
+			<TextField
+				fx:id="clientHostnameField">
+			</TextField>
+			<TextField
+				fx:id="clientPortField">
+			</TextField>
+			<TextField
+				fx:id="usernameField">
+			</TextField>
+			<Region styleClass="spaceBetweenTextFieldsAndButton" />
+			<Button
+				fx:id="connectButton"
+				text="Connect"
+				onAction="#connectToServer">
+			</Button>
+		</VBox>
+		<VBox
+			fx:id="clientConnectedBox"
+			visible="false">
+			<Label
+				fx:id="connectedToServerLabel"
+				styleClass="heading"
+				text="Connected to server">
+			</Label>
+			<TextField
+				fx:id="clientConnectedAddressLabel"
+				styleClass="addressField">
+			</TextField>
+			<Region styleClass="spaceBetweenTextFieldsAndButton" />
+			<Button
+				fx:id="disconnectButton"
+				text="Disconnect"
+				onAction="#disconnectFromServer">
+			</Button>
+		</VBox>
+	</StackPane>
+	<Separator></Separator>
+	<VBox fx:id="aiBox">
+		<Label
+			fx:id="addComputerPlayerLabel"
+			styleClass="heading"
+			text="Add Computer Player">
+		</Label>
+		<TextField
+			fx:id="aiHostNameField">
+		</TextField>
+		<TextField
+			fx:id="aiPortField">
+		</TextField>
+		<Region styleClass="spaceBetweenTextFieldsAndButton" />
+		<Button
+			fx:id="addAIButton"
+			text="Add"
+			onAction="#addAI">
+		</Button>
+	</VBox>
+</VBox>

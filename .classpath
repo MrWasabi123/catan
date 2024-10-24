@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.base.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.media.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.swing.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.web.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx-swt.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/eclipse_oxygen/catan/lib/apache-log4j-2.10.0-bin/log4j-1.2-api-2.10.0.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/eclipse_oxygen/catan/lib/apache-log4j-2.10.0-bin/log4j-api-2.10.0.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/eclipse_oxygen/catan/lib/apache-log4j-2.10.0-bin/log4j-core-2.10.0.jar"/>
+	<classpathentry kind="lib" path="c:/Users/wsajk/Documents/Projekte/Java/eclipse_oxygen/catan/lib/json-java.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

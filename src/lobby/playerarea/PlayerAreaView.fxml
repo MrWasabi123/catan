@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane
+	xmlns:fx="http://javafx.com/fxml"
+	fx:controller="lobby.playerarea.PlayerAreaController"
+	stylesheets="/lobby/playerarea/playerArea.css"
+	styleClass="root"
+	visible="false">
+	<center>
+		<ListView
+			fx:id="userListView"
+			focusTraversable="false"
+			styleClass="listView">
+		</ListView>
+	</center>
+</BorderPane>

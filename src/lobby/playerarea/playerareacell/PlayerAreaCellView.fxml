@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox
+	xmlns:fx="http://javafx.com/fxml"
+	fx:controller="lobby.playerarea.playerareacell.PlayerAreaCellController"
+	stylesheets="/lobby/playerarea/playerareacell/playerAreaCell.css"
+	styleClass="cell">
+	<ImageView
+		fx:id="userImage"
+		fitHeight="32"
+		preserveRatio="true">
+	</ImageView>
+	<Label
+		fx:id="userName"
+		minWidth="250">
+	</Label>
+	<ComboBox fx:id="colorChooser">
+	</ComboBox>
+	<Label
+		fx:id="readyLabel"
+		text="ready">
+	</Label>
+</HBox>

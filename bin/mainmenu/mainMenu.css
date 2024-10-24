@@ -1,0 +1,36 @@
+#root {
+	-fx-background-image: url("sunset.jpg");
+    -fx-background-repeat: stretch;   
+    -fx-background-position: center;
+    -fx-spacing: 40;
+}
+
+.button {
+	-fx-focus-color: black; 
+	-fx-faint-focus-color: black;
+	-fx-font: 20 arial;
+	-fx-pref-width: 160;
+	-fx-border-width: 4;
+	-fx-border-color: rgb(85,87,83);
+	-fx-effect: dropshadow(gaussian, black , 10 , 0.2 , 0 , 1);
+	-fx-shadow-highlight-color: rgb(85,87,83);
+}
+
+#title {
+	-fx-font-size: 40;
+	-fx-font-weight: 900;
+}
+
+#creators {
+	-fx-font-size: 8;
+}
+
+#settings {
+	-fx-background-color: #EAE8E8;
+	-fx-border-color: #890A0A; 
+	-fx-border-radius: 10;
+	-fx-border-width: 7;
+	-fx-background-radius: 12;
+	-fx-padding: 40.0;
+	-fx-font-size: 15;
+}

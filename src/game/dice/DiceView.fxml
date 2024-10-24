@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" stylesheets="@/game/dice/dice.css"
+	fx:controller="game.dice.DiceController">
+	<HBox spacing="10" AnchorPane.rightAnchor="0.0">
+		<ImageView fx:id="imageViewOne" preserveRatio="true"
+			visible="false" fitWidth="30">
+		</ImageView>
+		<ImageView fx:id="imageViewTwo" preserveRatio="true"
+			visible="false" fitWidth="30">
+		</ImageView>
+	</HBox>
+	<Button fx:id="rollButton" AnchorPane.rightAnchor="0.0"
+		onMouseClicked="#roll" styleClass="clickable, noBackground" >
+		<tooltip><Tooltip text="Roll dice" fx:id="rollTTip"/></tooltip>
+		<graphic>
+			<ImageView preserveRatio="true" fitWidth="30">
+				<image>
+					<Image url="/game/dice/images/rollDice.png"
+						backgroundLoading="true" />
+				</image>
+			</ImageView>
+		</graphic>
+	</Button>
+</AnchorPane>

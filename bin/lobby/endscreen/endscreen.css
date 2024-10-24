@@ -1,0 +1,38 @@
+.blue {
+	-fx-background-color: b1c9d3;
+}
+
+.logo {
+	-fx-padding: 10;
+}
+
+.label {
+	-fx-font-size: 18;
+}
+.teamName {
+	-fx-font-size: 65;
+	-fx-text-fill: darkred;
+}
+
+.buttonsBox {
+	-fx-spacing: 10;
+	-fx-padding: 10;
+	-fx-alignment: center;
+	-fx-font-size: 16;
+}
+
+#winnerText {
+	-fx-font-size: 30;
+}
+
+.winner {
+	-fx-font-size: 24;
+}
+
+.roundedBorder {
+	-fx-border-color:whitesmoke ;
+	-fx-border-radius: 15;
+	-fx-border-width: 5;
+	-fx-padding: 20;	
+	-fx-border-insets: 100 200 100 200 ;
+}

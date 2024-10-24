@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.geometry.Insets?>
+<?import java.lang.Double?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.CheckBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="mainmenu.SettingsController"
+	alignment="CENTER" visible="false" stylesheets="game/Game.css" id="settings" maxWidth="400"
+	maxHeight="400" fx:id="settings" spacing="20.0">
+
+	<fx:define>
+		<ToggleGroup fx:id="toggleGroup" />
+		<Double fx:value="50" fx:id="FLAG_WIDTH" />
+	</fx:define>
+
+	<VBox spacing="10.0">
+
+		<Label fx:id="languagesLabel" />
+
+		<HBox spacing="15">
+			<RadioButton toggleGroup="$toggleGroup" onAction="#setEN"
+				fx:id="enButton" styleClass="clickable">
+				<graphic>
+					<ImageView fitWidth="$FLAG_WIDTH" preserveRatio="true">
+						<Image url="/mainmenu/images/united-states.png"></Image>
+					</ImageView>
+				</graphic>
+			</RadioButton>
+
+			<RadioButton toggleGroup="$toggleGroup" onAction="#setDE"
+				fx:id="deButton" styleClass="clickable">
+				<graphic>
+					<ImageView fitWidth="$FLAG_WIDTH" preserveRatio="true">
+						<Image url="/mainmenu/images/germany.png"></Image>
+					</ImageView>
+				</graphic>
+			</RadioButton>
+			
+			<RadioButton toggleGroup="$toggleGroup" onAction="#setCN"
+				fx:id="cnButton" styleClass="clickable">
+				<graphic>
+					<ImageView fitWidth="$FLAG_WIDTH" preserveRatio="true">
+						<Image url="/mainmenu/images/china.png"></Image>
+					</ImageView>
+				</graphic>
+			</RadioButton>
+		</HBox>
+	</VBox>
+	
+	<VBox spacing="10.0">
+		<Label fx:id="soundEffectsVolumeLabel" />
+		<CheckBox fx:id="soundEffectsOnOffBox" selected="true" />
+		<Slider fx:id="soundEffectsVolumeSlider" max="1.0" showTickLabels="true" showTickMarks="false" value="0.4"/>
+
+		<Label fx:id="musicVolumeLabel" />
+		<CheckBox fx:id="musicOnOffBox" selected="true" />
+		<Slider fx:id="musicVolumeSlider" max="1.0" showTickLabels="true" showTickMarks="false" value="0.06"/>
+	</VBox>
+
+	<VBox VBox.vgrow="ALWAYS" />
+
+	<Button fx:id="okButton" text="OK" onAction="#close" minWidth="70" minHeight="25"
+	styleClass="clickable, settingsButton" alignment="CENTER"/>
+</VBox>

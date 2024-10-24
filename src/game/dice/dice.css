@@ -1,0 +1,19 @@
+/* TODO: All effects here are just temporary and taken from the corner.css . Replace them with something prettier and more reasonable. */
+
+.dice {
+    -fx-image: url(/game/dice/images/rollDice.png);
+}
+
+.dice:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 10, 0, 0, 0);
+    -fx-cursor: hand;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+.dice:pressed {
+    -fx-cursor: hand;
+    -fx-effect: none;
+    -fx-scale-x: 1.3;
+    -fx-scale-y: 1.3;
+}

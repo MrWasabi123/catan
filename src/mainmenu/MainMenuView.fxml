@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="mainmenu.MainMenuController"
+	stylesheets="mainmenu/mainMenu.css" alignment="center">
+	<VBox id="root" alignment="center">
+		<VBox alignment="center">
+			<Label text="Settlers of Catan" id="title"  fx:id="lTitle"/>			
+			<Label text="by Schicke Yaks" id="creators" fx:id="lAutoren" />
+		</VBox>
+		<Button text="Play" onAction="#goToLobby" fx:id="playButton"/>
+		<Button text="Settings" onAction="#openSettings" fx:id="settingsButton"/>
+		<Button text="Quit" onAction="#quit" fx:id="quitButton"/>
+	</VBox>
+	<fx:include source="/mainmenu/settingsView.fxml" fx:id="settings"/>
+</StackPane>

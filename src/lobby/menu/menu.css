@@ -1,0 +1,37 @@
+.menu {
+	-fx-padding: 10;
+	-fx-spacing: 10;
+}
+
+.addressField {
+	-fx-alignment: center;
+}
+
+.heading {
+	-fx-font-weight: bold;
+}
+
+#logoBox {
+	-fx-padding: 15;
+}
+
+#aiBox, #clientConnectedBox, #clientNotConnectedBox, #serverActiveBox, #serverNotActiveBox {
+	-fx-alignment: center;
+}
+
+.button {
+	-fx-padding: 5;
+}
+
+.textField {
+	-fx-spacing: 10;
+}
+
+#serverPane, #clientPane {
+	-fx-spacing: 10;
+}
+
+.spaceBetweenTextFieldsAndButton {
+	-fx-padding: 3;
+}
+

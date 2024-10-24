@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
+
+<ImageView
+	xmlns:fx="http://javafx.com/fxml"
+	fx:id = "robberView"
+	fx:controller="game.board.robber.RobberController"
+	preserveRatio="true"
+	styleClass="robber"
+	fitWidth="70"
+	fitHeight="70"
+	opacity="0.0">
+	<image>
+		<Image
+			url="/game/board/robber/robber.png"
+			backgroundLoading="true" />
+	</image>
+</ImageView>
+

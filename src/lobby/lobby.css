@@ -1,0 +1,17 @@
+#lobby {
+	-fx-background-color: b1c9d3;
+}
+
+#rightPane {
+	-fx-padding: 10; 
+	-fx-focus-color:transparent;
+	-fx-faint-focus-color:transparent;
+	-fx-background-color: bfd5df;
+	-fx-border-radius: 10;
+	-fx-border-width: 10;
+  	-fx-background-radius: 10;
+}
+
+#colorChooser {
+	-fx-padding: 0;
+}

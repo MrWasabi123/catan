@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Separator?>
+
+<VBox styleClass="blue" xmlns:fx="http://javafx.com/fxml"
+	fx:controller="lobby.endscreen.EndscreenController" stylesheets="lobby/endscreen/endscreen.css, game/Game.css">
+
+	<VBox alignment="CENTER" spacing="30" styleClass="roundedBorder">
+
+		<HBox alignment="CENTER" spacing="30" styleClass="blue, logo"
+			translateY="-70" maxWidth="300">
+			<Label text="Schicke" />
+			<ImageView fitWidth="80" pickOnBounds="true"
+				preserveRatio="true">
+				<image>
+					<Image url="/main/yakLogo.png" />
+				</image>
+			</ImageView>
+			<Label text="Yaks" />
+		</HBox>
+		
+		<Label fx:id="winnerText" id="winnerText" translateY="-50"/>
+		
+		<GridPane GridPane.hgrow="NEVER" vgap="20" alignment="CENTER">
+			<HBox spacing="20" alignment="CENTER_LEFT" HBox.hgrow="NEVER">
+				<ImageView fitWidth="50" fx:id="pictureWinner"
+					preserveRatio="true" GridPane.rowIndex="0" />
+				<Label fx:id="nameWinner" alignment="CENTER" styleClass="winner" />
+				<Label fx:id="pointsWinner" styleClass="winner" />
+			</HBox>
+
+			<HBox spacing="20" alignment="CENTER_LEFT" HBox.hgrow="NEVER"
+				translateX="10" GridPane.rowIndex="1">
+				<ImageView fitWidth="40" fx:id="picture1" preserveRatio="true" />
+				<Label fx:id="name1" alignment="CENTER" />
+				<Label fx:id="points1" />
+			</HBox>
+
+			<HBox spacing="20" alignment="CENTER_LEFT" HBox.hgrow="NEVER"
+				translateX="10" GridPane.rowIndex="2">
+				<ImageView fitWidth="40" fx:id="picture2" preserveRatio="true" />
+				<Label fx:id="name2" alignment="CENTER" />
+				<Label fx:id="points2" />
+			</HBox>
+
+
+			<HBox spacing="20" alignment="CENTER_LEFT" HBox.hgrow="NEVER"
+				translateX="10" GridPane.rowIndex="3">
+				<ImageView fitWidth="40" fx:id="picture3" preserveRatio="true" />
+				<Label fx:id="name3" alignment="CENTER" />
+				<Label fx:id="points3" />
+			</HBox>
+		</GridPane>
+
+		<HBox styleClass="buttonsBox">
+			<Button fx:id="restartButton" text="Ok" onMouseClicked="#handleButton" />
+		</HBox>
+	</VBox>
+</VBox>

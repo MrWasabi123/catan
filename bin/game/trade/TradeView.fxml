@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Separator?>
+<?import java.lang.Double?>
+<?import javafx.scene.layout.BorderPane?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="@/game/trade/trade.css"
+	fx:controller="game.trade.TradeController" spacing="10" pickOnBounds="false">
+
+	<fx:define>
+		<Double fx:id="INNERSPACING" fx:value="5.0" />
+		<Double fx:id="CARD_HEIGHT" fx:value="40.0" />
+		<Double fx:id="BUTTON_HEIGHT" fx:value="20.0" />
+		<Double fx:id="BUTTON_WIDTH" fx:value="20.0" />
+	</fx:define>
+
+	<BorderPane fx:id="tradeStarterBox" visible="false" styleClass="menuPane">
+		<left>
+			<VBox fx:id="tradeParticipantsBox">
+			</VBox>
+		</left>
+		<right>
+			<HBox alignment="center">
+				<Button fx:id="cancelButton" pickOnBounds="true" text="Cancel"
+					onMouseClicked="#cancelTrade" styleClass="controlButton"/>
+			</HBox>
+		</right>
+	</BorderPane>
+	<GridPane fx:id="defineTradePane" hgap="20.0" vgap="10.0" styleClass="menuPane">
+		<Label GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="6" id="heading"
+		fx:id="requestLabel">Request</Label>
+
+		<HBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="$INNERSPACING">
+			<Label fx:id="BrickLabel" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/brickcard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreBricks"
+					text="+" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessBricks"
+					text="-" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="1" GridPane.columnIndex="1" spacing="$INNERSPACING">
+			<Label fx:id="LumberLabel" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/lumbercard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreLumber"
+					text="+" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessLumber"
+					text="-" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="1" GridPane.columnIndex="2" spacing="$INNERSPACING">
+			<Label fx:id="OreLabel" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/orecard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreOre" text="+" 
+				prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessOre" text="-" 
+				prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="1" GridPane.columnIndex="3" spacing="$INNERSPACING">
+			<Label fx:id="GrainLabel" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/graincard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreGrain" text="+" 
+				prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessGrain" text="-" 
+				prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="1" GridPane.columnIndex="4" spacing="$INNERSPACING">
+			<Label fx:id="WoolLabel" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/woolcard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreWool" text="+"
+				prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessWool" text="-" 
+				prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<VBox GridPane.rowIndex="1" GridPane.columnIndex="5" GridPane.rowSpan="3" spacing="10.0" alignment="CENTER">
+			<Button fx:id="playersTradeButton" pickOnBounds="true"
+				text="Players" onMouseClicked="#tradeWithOtherPlayers" styleClass="controlButton"/>
+			<Button fx:id="bankTradeButton" pickOnBounds="true"
+				text="Bank" onMouseClicked="#tradeWithBank" styleClass="controlButton"/>
+		</VBox>
+
+		<Label GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="6" id="heading"
+		fx:id="offerLabel">Offer</Label>
+
+		<HBox GridPane.rowIndex="3" GridPane.columnIndex="0" spacing="$INNERSPACING">
+			<Label fx:id="BrickLabelOffer" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/brickcard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreBricksOffer"
+					text="+" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessBricksOffer"
+					text="-" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="3" GridPane.columnIndex="1" spacing="$INNERSPACING">
+			<Label fx:id="LumberLabelOffer" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/lumbercard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreLumberOffer"
+					text="+" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessLumberOffer"
+					text="-" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="3" GridPane.columnIndex="2" spacing="$INNERSPACING">
+			<Label fx:id="OreLabelOffer" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/orecard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreOreOffer"
+					text="+" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessOreOffer"
+					text="-" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="3" GridPane.columnIndex="3" spacing="$INNERSPACING">
+			<Label fx:id="GrainLabelOffer" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitHeight="$CARD_HEIGHT">
+						<Image url="/game/resources/pictures/graincard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreGrainOffer"
+					text="+" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessGrainOffer"
+					text="-" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<HBox GridPane.rowIndex="3" GridPane.columnIndex="4" spacing="$INNERSPACING">
+			<Label fx:id="WoolLabelOffer" text="0">
+				<graphic>
+					<ImageView preserveRatio="true" visible="true" fitWidth="30">
+						<Image url="/game/resources/pictures/woolcard.png"
+							backgroundLoading="true" />
+					</ImageView>
+				</graphic>
+			</Label>
+			<VBox>
+				<Button pickOnBounds="true" onMouseClicked="#moreWoolOffer"
+					text="+" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+				<Button pickOnBounds="true" onMouseClicked="#lessWoolOffer"
+					text="-" prefHeight="$BUTTON_HEIGHT" prefWidth="$BUTTON_WIDTH"/>
+			</VBox>
+		</HBox>
+
+		<Label fx:id="brickRatio" GridPane.rowIndex="4"
+			GridPane.columnIndex="0" alignment="CENTER" prefWidth="80"/>
+		<Label fx:id="lumberRatio" GridPane.rowIndex="4"
+			GridPane.columnIndex="1" alignment="CENTER" prefWidth="80"/>
+		<Label fx:id="oreRatio" GridPane.rowIndex="4"
+			GridPane.columnIndex="2" alignment="CENTER" prefWidth="80"/>
+		<Label fx:id="grainRatio" GridPane.rowIndex="4"
+			GridPane.columnIndex="3" alignment="CENTER" prefWidth="80"/>
+		<Label fx:id="woolRatio" GridPane.rowIndex="4"
+			GridPane.columnIndex="4" alignment="CENTER" prefWidth="80"/>
+	</GridPane>
+</VBox>

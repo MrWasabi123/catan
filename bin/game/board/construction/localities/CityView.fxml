@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
+
+<ImageView
+	xmlns:fx="http://javafx.com/fxml"
+	fx:controller="game.board.construction.localities.CityController"
+	fx:id="cityView"
+	fitWidth="30"
+	fitHeight="30"
+	styleClass="settlement">
+	<image>
+		<Image
+			url="/game/board/construction/localities/images/City.png"
+			backgroundLoading="true"/>
+	</image>
+</ImageView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane
+	id="lobby"
+	xmlns:fx="http://javafx.com/fxml"
+	fx:controller="lobby.LobbyController"
+	stylesheets="lobby/lobby.css">
+	<center>
+		<BorderPane fx:id="centerPane">
+		</BorderPane>
+	</center>
+	<right>
+		<BorderPane fx:id="rightPane">
+		</BorderPane>
+	</right>
+</BorderPane>

@@ -1,0 +1,7 @@
+#acceptLabel {
+	-fx-text-fill: green;
+}
+
+#declineLabel {
+	-fx-text-fill: red;
+}

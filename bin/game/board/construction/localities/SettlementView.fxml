@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
+
+<ImageView
+	xmlns:fx="http://javafx.com/fxml"
+	fx:controller="game.board.construction.localities.SettlementController"
+	fx:id="settlementView"
+	fitWidth="26"
+	fitHeight="21"
+	onMouseClicked="#select"
+	styleClass="clickable"
+	visible="false">
+	<image>
+		<Image
+			url="/game/board/construction/localities/images/Settlement.png"
+			backgroundLoading="true" />
+	</image>
+</ImageView>

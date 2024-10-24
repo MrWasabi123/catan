@@ -1,0 +1,5 @@
+.box {
+	-fx-spacing: 10;
+	-fx-padding: 10;
+	-fx-alignment: center;
+}

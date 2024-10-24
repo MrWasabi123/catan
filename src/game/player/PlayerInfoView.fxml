@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.Group?>
+<?import java.lang.Integer?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.control.Tooltip?>
+<?import java.lang.Double?>
+
+<StackPane alignment="CENTER_LEFT" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="game.player.PlayerInfoController" stylesheets="game/player/PlayerInfo.css"
+	fx:id="playerInfo" pickOnBounds="false">
+	<padding>
+		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+	</padding>
+
+	<fx:define>
+		<ImageView fitWidth="20.0" pickOnBounds="true"
+			preserveRatio="true" fx:id="largestArmyImage">
+			<image>
+				<Image url="game/player/images/knightVictory.png" />
+			</image>
+		</ImageView>
+		<ImageView fitWidth="20.0" pickOnBounds="true"
+			preserveRatio="true" fx:id="longestRoadVictoryPointImage">
+			<image>
+				<Image url="game/player/images/roadsVictory.png" />
+			</image>
+		</ImageView>
+	</fx:define>
+
+	<VBox styleClass="menuPane" spacing="12.0" maxWidth="180"
+		VBox.vgrow="ALWAYS" fx:id="clickablePart" onMouseClicked="#stealResources"
+		pickOnBounds="false">
+		<Label fx:id="nameLabel" pickOnBounds="true" styleClass="infoLabel"
+			maxWidth="180" />
+
+		<AnchorPane pickOnBounds="false">
+			<children>
+				<GridPane hgap="15.0" vgap="12.0" AnchorPane.leftAnchor="0.0"
+					AnchorPane.topAnchor="0.0" prefWidth="180">
+					<columnConstraints>
+						<ColumnConstraints percentWidth="33.3" />
+						<ColumnConstraints percentWidth="33.3" />
+						<ColumnConstraints percentWidth="33.3" />
+					</columnConstraints>
+					<children>
+						<VBox spacing="5.0" GridPane.rowSpan="2">
+							<StackPane alignment="CENTER">
+								<ImageView fx:id="profilePicture" fitWidth="40.0"
+									preserveRatio="true">
+								</ImageView>
+							</StackPane>
+							<HBox spacing="5.0"  alignment="CENTER">
+								<ImageView fx:id="diceImageOne" fitWidth="15"
+									preserveRatio="true" />
+								<ImageView fx:id="diceImageTwo" fitWidth="15"
+									preserveRatio="true" />
+							</HBox>
+						</VBox>
+						<Label fx:id="resourceCardsLabel" text="0" styleClass="infoLabel"
+							GridPane.columnIndex="1">
+							<tooltip>
+								<Tooltip text="Resource cards" fx:id="resourcesTTip" />
+							</tooltip>
+							<graphic>
+								<ImageView fitWidth="20.0" pickOnBounds="true"
+									preserveRatio="true">
+									<image>
+										<Image url="game/player/images/resources.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Label>
+						<Label fx:id="developmentCardsLabel" text="0" styleClass="infoLabel"
+							GridPane.columnIndex="2">
+							<tooltip>
+								<Tooltip text="Development cards" fx:id="developmentTTip" />
+							</tooltip>
+							<graphic>
+								<ImageView fitWidth="20.0" pickOnBounds="true"
+									preserveRatio="true">
+									<image>
+										<Image url="game/player/images/DevelopmentCards.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Label>
+						<Label fx:id="knightsLabel" text="0" GridPane.columnIndex="1"
+							GridPane.rowIndex="1" styleClass="infoLabel">
+							<tooltip>
+								<Tooltip text="Played knight cards" fx:id="knightsTTip" />
+							</tooltip>
+							<graphic>
+								<ImageView fx:id="knightsImage" fitWidth="20.0"
+									pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="game/player/images/Knights.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Label>
+						<Label fx:id="longestRoadLabel" text="0"
+							GridPane.columnIndex="2" styleClass="infoLabel"
+							GridPane.rowIndex="1">
+							<tooltip>
+								<Tooltip text="Longest road" fx:id="longestRoadTTip" />
+							</tooltip>
+							<graphic>
+								<ImageView fx:id="longestRoadImage" fitWidth="20.0"
+									pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="game/player/images/LongestRoad.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Label>
+						<Label fx:id="roadsLabel" text="15" GridPane.columnIndex="0"
+							styleClass="infoLabel" GridPane.rowIndex="2" graphicTextGap="10">
+							<tooltip>
+								<Tooltip text="Roads left to build" fx:id="roadsTTip" />
+							</tooltip>
+							<graphic>
+								<ImageView fitWidth="6.0" pickOnBounds="true"
+									fitHeight="20" rotate="40">
+									<image>
+										<Image url="game/board/construction/roads/Road.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Label>
+						<Label fx:id="settlementsLabel" text="5"
+							GridPane.columnIndex="1" styleClass="infoLabel"
+							GridPane.rowIndex="2">
+							<tooltip>
+								<Tooltip text="Settlements left to build" fx:id="settlementsTTip" />
+							</tooltip>
+							<graphic>
+								<ImageView fitWidth="25.0" pickOnBounds="true"
+									preserveRatio="true">
+									<image>
+										<Image
+											url="game/board/construction/localities/images/Settlement.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Label>
+						<Label fx:id="citiesLabel" text="4" GridPane.columnIndex="2"
+							styleClass="infoLabel" GridPane.rowIndex="2">
+							<tooltip>
+								<Tooltip text="Cities left to build" fx:id="citiesTTip" />
+							</tooltip>
+							<graphic>
+								<ImageView fitWidth="25.0" pickOnBounds="true"
+									preserveRatio="true">
+									<image>
+										<Image url="game/board/construction/localities/images/City.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Label>
+					</children>
+				</GridPane>
+				<StackPane alignment="CENTER" AnchorPane.leftAnchor="-15.0"
+					AnchorPane.topAnchor="-8.0">
+					<ImageView fitWidth="30.0" pickOnBounds="true"
+						preserveRatio="true">
+						<image>
+							<Image url="game/player/images/VictoryPoints.png" />
+						</image>
+					</ImageView>
+					<Label fx:id="victoryPointsLabel" text="0" GridPane.rowIndex="2"
+						styleClass="infoLabel">
+						<tooltip>
+							<Tooltip text="Victory points" />
+						</tooltip>
+					</Label>
+				</StackPane>
+			</children>
+		</AnchorPane>
+	</VBox>
+	<VBox fx:id="newAndLostResources" translateX="200.0" translateY="10.0"
+		mouseTransparent="true" pickOnBounds="false">
+	</VBox>
+	<BorderPane fx:id="activePlayerMarkerPane">
+		<right>
+			<AnchorPane>
+				<StackPane>
+					<Polygon styleClass="activePlayerMarker">
+						<points>
+							<Double fx:value="0.0" />
+							<Double fx:value="0.0" />
+							<Double fx:value="38.0" />
+							<Double fx:value="0.0" />
+							<Double fx:value="38.0" />
+							<Double fx:value="38.0" />
+						</points>
+					</Polygon>
+					<AnchorPane>
+						<Label styleClass="activePlayerMarkerLabel" text="active"
+							rotate="45" layoutX="7" layoutY="7" />
+					</AnchorPane>
+				</StackPane>
+			</AnchorPane>
+		</right>
+	</BorderPane>
+</StackPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Group?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="game/Game.css"
+	hgap="15.0" vgap="15.0" styleClass="menuPane">
+
+	<Label text="Construction costs" GridPane.rowIndex="0"
+		GridPane.columnIndex="0" GridPane.columnSpan="2" fx:id="lBuildCost" />
+	<ImageView fitWidth="5" fitHeight="25" rotate="55.0"
+		translateX="10" GridPane.rowIndex="1" GridPane.columnIndex="0">
+		<image>
+			<Image url="/game/board/construction/roads/Road.png" />
+		</image>
+	</ImageView>
+	<HBox GridPane.rowIndex="1" GridPane.columnIndex="1" spacing="2" opacity="0.5" fx:id="costRoadPane">
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="brick" />
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="lumber" />
+	</HBox>
+
+	<ImageView fitWidth="25" preserveRatio="true"
+		GridPane.rowIndex="2" GridPane.columnIndex="0">
+		<image>
+			<Image url="/game/board/construction/localities/images/Settlement.png" />
+		</image>
+	</ImageView>
+	<HBox GridPane.rowIndex="2" GridPane.columnIndex="1" spacing="2" opacity="0.5" fx:id="costSettlementPane">
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="brick" />
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="grain" />
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="lumber" />
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="wool" />
+	</HBox>
+
+	<ImageView fitWidth="25" preserveRatio="true"
+		GridPane.rowIndex="3" GridPane.columnIndex="0">
+		<image>
+			<Image url="/game/board/construction/localities/images/City.png" />
+		</image>
+	</ImageView>
+	<HBox GridPane.rowIndex="3" GridPane.columnIndex="1" spacing="2" opacity="0.5" fx:id="costCityPane">
+		<AnchorPane>
+			<ImageView fitWidth="20" preserveRatio="true" styleClass="ore"
+				AnchorPane.leftAnchor="16.0" />
+			<ImageView fitWidth="20" preserveRatio="true" styleClass="ore"
+				AnchorPane.leftAnchor="8.0" />
+			<ImageView fitWidth="20" preserveRatio="true" styleClass="ore"
+				AnchorPane.leftAnchor="0.0" />
+		</AnchorPane>
+		<AnchorPane>
+			<ImageView fitWidth="20" preserveRatio="true" styleClass="grain"
+				AnchorPane.leftAnchor="8.0" />
+			<ImageView fitWidth="20" preserveRatio="true" styleClass="grain" />
+		</AnchorPane>
+	</HBox>
+
+	<ImageView fitWidth="25" preserveRatio="true"
+		GridPane.rowIndex="4" GridPane.columnIndex="0">
+		<image>
+			<Image url="/game/images/DevelopmentCard.png" />
+		</image>
+	</ImageView>
+	<HBox spacing="2" GridPane.rowIndex="4" GridPane.columnIndex="1" opacity="0.5" fx:id="costDevelopmentPane">
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="ore" />
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="grain" />
+		<ImageView fitWidth="20" preserveRatio="true" styleClass="wool" />
+	</HBox>
+
+</GridPane>

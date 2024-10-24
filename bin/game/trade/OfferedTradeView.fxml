@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Represents the visualization of the trade offer the other players receive -->
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Separator?>
+
+<VBox
+	styleClass="menuPane"
+	xmlns:fx="http://javafx.com/fxml"
+	stylesheets="@/game/Game.css"
+	fx:controller="game.trade.OfferedTradeController"
+	spacing="10"
+	alignment="CENTER">
+	<Label fx:id="playerName" />
+
+	<HBox
+		spacing="20"
+		alignment="CENTER">
+		<VBox alignment="CENTER">
+			<Label fx:id="offerLabel" />
+			<AnchorPane fx:id="offeredCards" />
+		</VBox>
+		<VBox alignment="CENTER">
+			<Label fx:id="requestLabel" />
+			<AnchorPane fx:id="requestedCards" />
+		</VBox>
+	</HBox>
+
+	<HBox
+		spacing="20"
+		alignment="CENTER">
+		<Button
+			fx:id="acceptButton"
+			pickOnBounds="true"
+			onMouseClicked="#acceptTrade" />
+		<Button
+			fx:id="declineButton"
+			pickOnBounds="true"
+			onMouseClicked="#declineTrade" />
+		<Button
+			fx:id="cancelButton"
+			pickOnBounds="true"
+			onMouseClicked="#cancelTrade" />
+	</HBox>
+</VBox>

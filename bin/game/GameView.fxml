@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="game.GameController"
+	id="root" stylesheets="game/Game.css">
+	<padding>
+		<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+	</padding>
+
+	<StackPane AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0"
+		AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" alignment="CENTER">
+
+		<BorderPane fx:id="rootPane">
+			<center>
+				<StackPane alignment="CENTER">
+					<VBox AnchorPane.topAnchor="0.0">
+
+						<!--round display, in the top -->
+						<HBox spacing="10" AnchorPane.topAnchor="0.0"
+							mouseTransparent="true" HBox.hgrow="ALWAYS" alignment="CENTER">
+							<Label text="Action: " fx:id="actionLabel" />
+							<Label fx:id="actionDisplay" />
+						</HBox>
+
+						<VBox VBox.vgrow="ALWAYS" />
+
+						<!--the cards on the bottom -->
+						<HBox alignment="BOTTOM_CENTER" AnchorPane.bottomAnchor="0.0"
+							AnchorPane.leftAnchor="0.0" fx:id="resourceCardsPane" HBox.Hgrow="ALWAYS"
+							prefHeight="70">
+
+							<!--pane that contains the resource cards, on the bottom -->
+							<HBox fx:id="resourceCardsPane" alignment="CENTER"
+								AnchorPane.bottomAnchor="0.0" HBox.Hgrow="ALWAYS" />
+
+
+						</HBox>
+					</VBox>
+					<!--boardPane, in the center -->
+					<fx:include source="/game/board/BoardView.fxml" fx:id="board"
+						AnchorPane.topAnchor="30.0" AnchorPane.bottomAnchor="30.0">
+					</fx:include>
+				</StackPane>
+			</center>
+
+			<left>
+				<VBox pickOnBounds="false">
+					<!--pane that contains the playerInfos, on the left -->
+					<VBox fx:id="playersPane" spacing="20.0" pickOnBounds="false" />
+					<!-- Empty space -->
+					<VBox VBox.vgrow="ALWAYS" />
+					<!--pane that contains the mainPlayerInfo, on the bottom -->
+					<AnchorPane fx:id="mainPlayerInfoPane" />
+				</VBox>
+			</left>
+
+			<right>
+				<VBox spacing="20" alignment="CENTER_RIGHT" maxWidth="230">
+
+					<VBox fx:id="chatPane" VBox.vgrow="NEVER"/>
+
+					<!--pane that contains the chat and the buttons, on the right -->
+					<VBox alignment="CENTER_RIGHT" spacing="5.0">
+
+						<fx:include source="/game/dice/DiceView.fxml" fx:id="dice" />
+						<HBox alignment="TOP_RIGHT" spacing="10">
+							<VBox visible="false" fx:id="constructionCostsPane" />
+
+							<HBox HBox.hgrow="ALWAYS" />
+
+							<VBox spacing="5">
+
+								<Button fx:id="developmentButton" styleClass="clickable, noBackground"
+									onMouseClicked="#buyDevelopmentCard">
+									<tooltip>
+										<Tooltip text="Buy development card" fx:id="developmentTTip" />
+									</tooltip>
+									<graphic>
+										<ImageView fitWidth="30" preserveRatio="true">
+											<image>
+												<Image url="/game/images/DevelopmentCard.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+								<Button fx:id="tradeButton" styleClass="clickable, noBackground"
+									onMouseClicked="#setTradeVisible">
+									<tooltip>
+										<Tooltip text="Open trade menu" fx:id="tradeTTip" />
+									</tooltip>
+									<graphic>
+										<ImageView fitWidth="30" preserveRatio="true">
+											<image>
+												<Image url="/game/images/Trade.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+								<Button fx:id="endTurnButton" styleClass="clickable, noBackground"
+									onMouseClicked="#endTurn">
+									<tooltip>
+										<Tooltip text="End turn" fx:id="endTurnTTip" />
+									</tooltip>
+									<graphic>
+										<ImageView fitWidth="30" preserveRatio="true">
+											<image>
+												<Image url="/game/images/NextPlayer.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+
+								<VBox prefHeight="20" />
+								
+								
+
+								<Button fx:id="infoButton" styleClass="clickable, noBackground"
+									onMouseClicked="#infoButtonClicked">
+									<tooltip>
+										<Tooltip text="Show construction costs" fx:id="infoTTip" />
+									</tooltip>
+									<graphic>
+										<ImageView fitWidth="30" preserveRatio="true">
+											<Image url="/game/images/Info.png" />
+										</ImageView>
+									</graphic>
+								</Button>
+
+								<Button styleClass="clickable, noBackground" onAction="#openSettings">
+									<tooltip>
+										<Tooltip text="Settings" fx:id="settingsTTip" />
+									</tooltip>
+									<graphic>
+										<ImageView fitWidth="30" preserveRatio="true">
+											<image>
+												<Image url="/game/images/settings.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+
+								<Button styleClass="clickable, noBackground" onAction="#openExitGame">
+									<tooltip>
+										<Tooltip text="Exit" fx:id="exitTTip" />
+									</tooltip>
+									<graphic>
+										<ImageView fitWidth="30" preserveRatio="true">
+											<image>
+												<Image url="/game/images/exit.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+
+							</VBox>
+						</HBox>
+
+					</VBox>
+
+					<VBox VBox.vgrow="ALWAYS" />
+					<!--pane that contains the development cards, on the bottom -->
+					<HBox fx:id="developmentCardsPane" minWidth="230" maxWidth="230"
+						prefHeight="60" />
+				</VBox>
+			</right>
+
+		</BorderPane>
+
+		<Group translateY="130">
+			<!--pane that contains the trade menu, on the bottom -->
+			<Pane fx:id="tradePane" visible="false" pickOnBounds="false" />
+
+			<!-- pane that contains the trade offer menu -->
+			<Pane fx:id="offeredTradePane" visible="false" />
+		</Group>
+
+		<Group translateY="-100">
+			<!--pane that contains the menu to discard resources, in the center -->
+			<fx:include source="/game/DiscardResources.fxml" fx:id="discardResources" />
+		</Group>
+
+		<fx:include source="/mainmenu/settingsView.fxml" fx:id="settingsMenu"
+			styleClass="menuPane, settings, dropshadow" />
+
+		<VBox styleClass="menuPane, settings, dropshadow" fx:id="exitMenu"
+			spacing="50" visible="false" maxWidth="400" maxHeight="200" alignment="CENTER">
+			<Label fx:id="exitConfirmationLabel" text="Are you sure you want to exit the game?" />
+			<HBox spacing="50" alignment="CENTER">
+				<Button onAction="#openExitGame" text="Cancel" fx:id="cancelExitButton"/>
+				<Button onAction="#exitGame" text="OK" fx:id="confirmExitButton"/>
+			</HBox>
+		</VBox>
+	</StackPane>
+</AnchorPane>

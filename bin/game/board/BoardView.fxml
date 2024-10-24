@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.transform.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.board.BoardController"
+	stylesheets="@/game/board/hexes/hex.css" alignment="center" pickOnBounds="false">
+	<Group translateY="-20">
+		<fx:define>
+			<ImageView fx:id="backgroundWater" preserveRatio="true"
+				opacity="1">
+				<image>
+					<Image url="game/board/images/water.png" />
+				</image>
+			</ImageView>
+			<ImageView fx:id="backgroundLand" preserveRatio="true">
+				<image>
+					<Image url="game/board/images/backgroundLand.png" />
+				</image>
+			</ImageView>
+		</fx:define>
+		<StackPane fx:id="backgroundPane" alignment="CENTER" />
+		<Group fx:id="harborGroup" />
+		<Group fx:id="hexesGroup" />
+		<Group fx:id="edgesGroup" />
+		<Group fx:id="cornersGroup" />
+		<Group fx:id="tokensGroup" />
+		<Group fx:id="robberGroup" />
+		<Group fx:id="roadsGroup" />
+		<Group fx:id="localitiesGroup" />
+
+	</Group>
+	<VBox fx:id="stealResourceCardPane" visible="false" maxWidth="150"
+		maxHeight="170" spacing="5.0" styleClass="menuPane" translateX="-240"
+		translateY="-245">
+		<Label text="Steal resource card from: " wrapText="true"/>
+		<VBox fx:id="playerSelectionPane" spacing="3.0" />
+	</VBox>
+</StackPane>

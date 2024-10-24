@@ -1,0 +1,17 @@
+/* TODO: All effects here are just temporary. Replace them with something prettier and more reasonable. */
+
+.hex {
+}
+
+.hex:hover {
+    -fx-cursor: hand;   
+}
+
+.hex:pressed {
+	-fx-effect:innershadow(three-pass-box, black, 10, 0, 0, 0);
+}
+
+.token {
+	-fx-font-size: 15;
+	-fx-alignment:center;
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="game.cards.DevelopmentCardsController"
+	 alignment="BOTTOM_RIGHT" spacing="10.0">
+	<Pane translateX="-60.0" translateY="-70.0">
+		<StackPane fx:id="menuPane" styleClass="menuPane" visible="false" maxWidth="280">
+			<VBox fx:id="yearOfPlentyMenu" visible="false" spacing="5.0">
+				<Label text="Select two resources: " fx:id="yearOfPlentyMenuLabel"/>
+				<HBox spacing="5.0">
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="brick, clickable"
+						id="brick" onMouseClicked="#resourceSelected" />
+					<ImageView fitWidth="20" preserveRatio="true"
+						styleClass="lumber, clickable" id="lumber" onMouseClicked="#resourceSelected" />
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="ore, clickable"
+						id="ore" onMouseClicked="#resourceSelected" />
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="grain, clickable"
+						id="grain" onMouseClicked="#resourceSelected" />
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="wool, clickable"
+						id="wool" onMouseClicked="#resourceSelected" />
+					<HBox fx:id="selectedResourceCardsPane" alignment="CENTER_RIGHT" HBox.Hgrow="ALWAYS"/>
+					<Button text="OK" onAction="#playYearOfPlenty" />
+				</HBox>
+			</VBox>
+
+			<VBox fx:id="monopolyMenu" visible="false" spacing="5.0">
+				<Label text="Select a resource type: " fx:id="monopolyMenuLabel"/>
+				<HBox spacing="5.0">
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="brick, clickable"
+						id="brick" onMouseClicked="#playMonopoly" />
+					<ImageView fitWidth="20" preserveRatio="true"
+						styleClass="lumber, clickable" id="lumber" onMouseClicked="#playMonopoly" />
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="ore, clickable"
+						id="ore" onMouseClicked="#playMonopoly" />
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="grain, clickable"
+						id="grain" onMouseClicked="#playMonopoly" />
+					<ImageView fitWidth="20" preserveRatio="true" styleClass="wool, clickable"
+						id="wool" onMouseClicked="#playMonopoly" />
+				</HBox>
+			</VBox>
+			<VBox fx:id="knightMenu" visible="false" spacing="5.0">
+				<Label text="Drag the robber to the new position." fx:id="knightMenuLabel"/>
+			</VBox>
+			<VBox fx:id="roadBuildingMenu" visible="false" spacing="5.0" alignment="CENTER">
+				<Label text="Select two edges to build a road on them." fx:id="roadBuildingMenuLabel"/>
+				<Button text="OK" onAction="#sendRoadBuilding"/>
+			</VBox>
+		</StackPane>
+
+		<StackPane alignment="TOP_LEFT" maxWidth="280" visible="false"
+			fx:id="infoPane" styleClass="menuPane">
+			<Label fx:id="knightInfo" visible="false" wrapText="true"
+				text="Knight: Move the robber. Steal 1 ressource card from the owner of an adjacent settlement or city." />
+
+			<Label fx:id="yearOfPlentyInfo" visible="false" wrapText="true"
+				text="Year of Plenty: Take any 2 resources from the bank." />
+
+			<Label fx:id="monopolyInfo" visible="false" wrapText="true"
+				text="Monopoly: The other players must give you all their cards of a resource type of your choosing." />
+
+			<Label fx:id="roadBuildingInfo" visible="false" wrapText="true"
+				text="Road Building: Place two new roads as if you had just built them." />
+		</StackPane>
+
+	</Pane>
+	<HBox spacing="12.0" alignment="BOTTOM_RIGHT">
+
+		<children>
+			<AnchorPane fx:id="yearOfPlentyPane" onMouseClicked="#cardSelected" id="YEAR_OF_PLENTY"/>
+			<AnchorPane fx:id="roadBuildingPane" onMouseClicked="#cardSelected" id="ROAD_BUILDING"/>
+			<AnchorPane fx:id="monopolyPane" onMouseClicked="#cardSelected" id="MONOPOLY"/>
+			<AnchorPane fx:id="knightsPane" onMouseClicked="#cardSelected" id="KNIGHT"/>
+			<AnchorPane fx:id="victoryPointsPane" />
+		</children>
+	</HBox>
+</VBox>
